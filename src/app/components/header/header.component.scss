@@ -1,0 +1,32 @@
+@import "../../../assets/styles/colores.scss";
+mat-toolbar{
+    background-color:  white;
+    font-weight: bold;
+    font-size: 2rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 2rem;
+    border:0.2rem solid black;
+    border-radius: 1rem;
+}
+img,#title:hover{
+    cursor: pointer;
+}
+.example-spacer {
+    flex: 1 1 auto;
+  }
+button{
+    background-color: #1C4CBD;
+    border-color: #000000;
+}
+button:hover{
+    background-color: #FB1B1B;
+}
+#back{
+    border-radius: 40%;
+    color: #000000;
+    background-color: white;
+    border-color: white;
+    height: 40px;
+    width: 40px;
+}
+

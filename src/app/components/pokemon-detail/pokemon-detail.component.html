@@ -1,0 +1,102 @@
+<!--
+<div id="pokemon-detail" class="d-flex justify-content-center p-5 {{(data$ | async)?.firstType}}"
+    style="height: 50rem;">
+    
+    <div class="d-flex flex-column justify-content-center mb-3">
+        <div class="p-3">
+            <div id="id-nombre">
+                <p id="id"> #{{(data$ | async)?.id}}</p>
+                <p id="nombre">{{(data$ | async)?.name}}</p>
+            </div>
+        </div>
+        <div class="p-3">
+            <p id="japanese">ポケットモンスター</p>
+        </div>
+        <div class="p-3">
+            <div id="weigth">
+                <p>heigth: {{(data$ | async)?.height}}</p>
+                <p>weigth: {{(data$ | async)?.weight}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="image" class="mx-5  d-flex justify-content-center">
+        <img src="{{(data$ | async)?.image}}" alt="" width="80%">
+    </div>
+
+    <div class=" d-flex justify-content-center ">
+        <div id="type-stats" class=" d-flex flex-column ">
+            <div id="title">
+                Type:
+            </div>
+
+            <div id="type" *ngFor="let type of (data$ | async)?.types" class="my-3">
+                {{type}}
+            </div>
+            <div id="title" class="my-5">
+                Stats:
+            </div>
+            <div id="stats" class="m-2" *ngFor="let stat of (data$ | async)?.stats">
+                <div>{{stat.stat.name}} : {{stat.base_stat}}</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+-->
+
+<div class="detail text-center p-6 {{(data$ | async)?.firstType}}">
+    <div class="row">
+
+        <div class="data-center text-start col-md-6 col-xxl-3 ">
+            <div>
+                <div id="id-nombre ">
+                    <p class="title align-baseline"> #{{(data$ | async)?.id}}</p>
+                    <p id="nombre" class="fs-1 my-4">
+                        {{(data$ | async)?.name}}
+                    </p>
+                </div>
+                <div class="">
+                    <p id="japanese">ポケットモンスター</p>
+                </div>
+    
+                <div id="weigth-height m-2">
+                    <div class="my-2"> 
+                        <div class="inline">
+                        Heigth:
+                        </div>
+                         {{(data$ | async)?.height}}
+                    </div>
+                    <div class="my-2">
+                        <div class="inline ">
+                        Weigth:
+                        </div>
+                         {{(data$ | async)?.weight}}
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-md-6  col-xxl-5 ">
+            <img src="{{(data$ | async)?.image}}" alt="" width="80%">
+        </div>
+        <div class="data-center text-start col-md-12  col-xxl-4">
+            <div>
+                <div class="title">
+                    Type:
+                </div>
+                
+                <div *ngFor="let type of (data$ | async)?.types" class="types m-3 type bg-white">
+                    <img src="../../../assets/images/{{type}}.png" alt="" width="60">
+                </div>
+    
+                <div class="title">
+                    Base tats:
+                </div>
+                <div class="stats m-2 p-2" *ngFor="let stat of (data$ | async)?.stats">
+                    <div>{{stat.stat.name}} : {{stat.base_stat}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

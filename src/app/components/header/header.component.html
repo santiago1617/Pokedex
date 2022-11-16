@@ -1,0 +1,13 @@
+
+<mat-toolbar >
+    <div (click)="goHome()">
+        <button id="back" *ngIf="!(filterBool$ | async)" #btn type="button" pButton icon="fa-solid fa-angles-left" (click)="goHome()" ></button>
+        <img src="../../../assets/images/pokeBall.png" alt="pokedex" width="40" height="40" >
+        <span id="title">Pokedex</span>
+    </div>
+    
+    <span class="example-spacer"></span>
+    <button *ngIf="(filterBool$ | async)" #btn type="button" pButton icon="pi pi-filter" label="Filter" (click)="menu.toggle($event)"></button>
+<p-slideMenu #menu [model]="items" [popup]="true" [viewportHeight]="250" [style]="{'min-width':'175px'}" (click) = "filter($event)"></p-slideMenu>
+</mat-toolbar>
+

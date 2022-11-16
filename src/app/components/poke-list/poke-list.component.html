@@ -1,0 +1,44 @@
+<!--<div class="container" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="1000"
+    (scrolled)="onScroll()">
+    <div class="row gy" >
+        <app-poke-summary *ngFor="let pokemon of (data$ | async)" [pokemon]="pokemon"></app-poke-summary>
+    </div>
+
+</div>
+
+<div class="search-results" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="1000"
+    (scrolled)="onScroll()">
+    <div class="d-flex justify-content-evenly flex-wrap p-3">
+        <div *ngFor="let pokemon of (data$ | async)" class="d-flex justify-content-evenly flex-wrap">
+            <app-poke-summary [pokemon]="pokemon"></app-poke-summary>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="container text-center " infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="1000"
+    (scrolled)="onScroll()">
+    <div class="row gx-5 gy-2 text-center ">
+        <div class="col-auto tarjeta text-center " *ngFor="let pokemon of (data$ | async)">
+            <app-poke-summary [pokemon]="pokemon"></app-poke-summary>
+        </div>
+    </div>
+      <div *ngIf="loadingBool" class="spinner-border text-danger" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+</div>
+-->
+
+<div class=" text-center my-3" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="1000"
+(scrolled)="onScroll()">
+    <div class=" row gx-5 gy-2 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 ">
+      <div class="col " *ngFor="let pokemon of (data$ | async)">
+        <app-poke-summary [pokemon]="pokemon"></app-poke-summary>
+      </div>
+    </div>
+    <div *ngIf="loadingBool" class="spinner-border text-danger" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+  </div>

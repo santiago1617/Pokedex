@@ -1,0 +1,40 @@
+<!--
+    <div class="card d-flex rounded  {{pokemon.firstType}}" (click)="goDetail()">
+    <mat-grid-list cols="2">
+        <mat-grid-tile>
+
+            <div class="d-flex  flex-wrap ">
+                <mat-card-title>{{pokemon.name}}</mat-card-title>
+                <div class="d-flex  flex-wrap">
+                    <mat-card-subtitle *ngFor="let type of pokemon.types" class="{{pokemon.firstType}}">{{type}}
+                    </mat-card-subtitle>
+                </div>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <img src="{{pokemon.image}}" alt="pokedex" width="70" height="70">
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
+-->
+
+
+<div class="poke row p-2 pokemon {{pokemon.firstType}}" (click)="goDetail()">
+    <div class="col-6 ">
+        <app-selecton-loader *ngIf="!loaded" Cwidth="100" ></app-selecton-loader>
+        <div *ngIf="loaded" class="col py-2 fw-bolder">
+            {{pokemon.name}}
+        </div>
+        <app-selecton-loader *ngIf="!loaded" Cwidth="50" ></app-selecton-loader>
+        <app-selecton-loader *ngIf="!loaded" Cwidth="50" ></app-selecton-loader>
+        <div class="col" *ngIf="loaded">
+            <div class="type" *ngFor="let type of pokemon.types">
+                {{type}}
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <app-selecton-loader *ngIf="!loaded" Cwidth="70" Cheight="70" circle=true></app-selecton-loader>
+        <img *ngIf="loaded" src="{{pokemon.image}}" alt="pokedex" width="70" height="70">
+    </div>
+</div>
